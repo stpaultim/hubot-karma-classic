@@ -26,11 +26,16 @@ class Karma
     @cache = {}
 
     @increment_responses = [
-      "+1! BD", "gained a level! BD", "is on the rise! BD", "leveled up! BD"
+        "1000%", "great work", "thanks for all you do", 
+        "leveled up!", "go team.", "- Dragon Fire", "kudos", 
+        "GG", "Cheers", "Props to you for all your hard work.",
+        ":-)", ":grinning:  :heart:", ":drop_lounging: :drop_lounging: :drop_lounging: :drop_lounging:",
+        ":pancakes:"
     ]
 
     @decrement_responses = [
-      "took a hit! Ouch. BD", "took a dive. BD", "lost a life. BD", "lost a level. BD"
+      "took a hit! Ouch.", "took a dive.", "- oops! Sorry about that.", "really?", "????", 
+      "peanuts and brittle.", "didn't see that coming"
     ]
 
     @robot.brain.on 'loaded', =>
