@@ -1,11 +1,11 @@
 {
-  "name": "hubot-karma-classic",
+  "name": "hubot-karma-classic-enhanced",
   "description": "A Hubot script to track arbitrary karma",
   "version": "1.0.3",
   "main": "./src/karma-classic",
   "repository": {
     "type": "git",
-    "url": "https://github.com/notpeter/hubot-karma-classic.git"
+    "url": "https://github.com/stpaultim/hubot-karma-classic.git"
   },
   "keywords": [
     "hubot",
