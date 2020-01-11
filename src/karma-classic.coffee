@@ -26,7 +26,7 @@ class Karma
     @cache = {}
 
     @increment_responses = [
-      "+1!", "gained a level!", "is on the rise!", "leveled up!"
+      "+1! BD", "gained a level! BD", "is on the rise! BD", "leveled up! BD"
     ]
 
     @decrement_responses = [
@@ -81,7 +81,7 @@ module.exports = (robot) ->
   ###
   # Listen for "++" messages and increment
   ###
-  robot.hear /@?(\S+[^+\s])\s*\+\+(\s|$)/, (msg) ->
+  robot.hear /@?(\S+[^+\s])\s?\+\+(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
     karma.increment subject
     msg.send "#{subject} #{karma.incrementResponse()} (Karma: #{karma.get(subject)})"
@@ -89,7 +89,7 @@ module.exports = (robot) ->
   ###
   # Listen for "--" messages and decrement
   ###
-  robot.hear /@?(\S+[^-\s])\s*--(\s|$)/, (msg) ->
+  robot.hear /@?(\S+[^-\s])\s?--(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
     # avoid catching HTML comments
     unless subject[-2..] == "<!"
