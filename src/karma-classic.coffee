@@ -30,7 +30,7 @@ class Karma
     ]
 
     @decrement_responses = [
-      "took a hit! Ouch.", "took a dive.", "lost a life.", "lost a level."
+      "took a hit! Ouch. BD", "took a dive. BD", "lost a life. BD", "lost a level. BD"
     ]
 
     @robot.brain.on 'loaded', =>
@@ -81,7 +81,7 @@ module.exports = (robot) ->
   ###
   # Listen for "++" messages and increment
   ###
-  robot.hear /@?(\S+[^+\s])\s?\+\+(\s|$)/, (msg) ->
+  robot.hear /@?(\S+[^+\s])\s*\+\+(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
     karma.increment subject
     msg.send "#{subject} #{karma.incrementResponse()} (Karma: #{karma.get(subject)})"
@@ -89,7 +89,7 @@ module.exports = (robot) ->
   ###
   # Listen for "--" messages and decrement
   ###
-  robot.hear /@?(\S+[^-\s])\s?--(\s|$)/, (msg) ->
+  robot.hear /@?(\S+[^-\s])\s*--(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
     # avoid catching HTML comments
     unless subject[-2..] == "<!"
